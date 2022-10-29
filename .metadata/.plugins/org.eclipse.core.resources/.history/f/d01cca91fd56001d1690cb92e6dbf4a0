@@ -1,0 +1,27 @@
+package test;
+
+public class test {
+	public int[][] transpose(int[][] array)
+	{
+    	int m = array.length; //the matrix is square
+        int[][] op = new int[m][m];
+            
+        for(int i=0; i<m; i++)
+        {
+        	for(int j=0; j<m; j++)
+            {
+        		op[i][j] = array[j][i];
+            }
+        }
+        return op;
+    } 
+
+	public static void main(String[] args)
+	{
+		String mat = "[[4,5],[9,8]]";
+		String splitt = mat.replace("[[", "");
+		String splitt = mat.replace("]]", "");
+		String splitt = mat.replace("],[", "/");
+		System.out.println(splitt);
+	}
+}
