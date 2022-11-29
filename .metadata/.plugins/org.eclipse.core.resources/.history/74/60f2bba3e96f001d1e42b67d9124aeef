@@ -1,3 +1,9 @@
+package test;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -20,8 +26,10 @@ public boolean contains(Object o);
 }
 
 
-public class DoubleLinkedList implements ILinkedList {
+public class test implements ILinkedList {
 	/* Implement your linked list class here*/
+    int size=0;
+    Node head, tail = null;
     
     class Node{
         int data;
@@ -33,25 +41,32 @@ public class DoubleLinkedList implements ILinkedList {
         }
     }
     
-     void printDLL(DoubleLinkedList myList){
-        Node temp = head;
+    public void printDLL(test myList){
+    	int i =0;
+    	
         if(head == null){
             System.out.println("[]");
             return;
         }
         else{
+        	Node temp = head;
             System.out.print("[");
             while(temp != null){
-            System.out.println(temp.data+",");
-            temp = temp.next;
+            	System.out.print(temp.data);
+            	if(i<size)
+            		System.out.print(", ");
+            	temp = temp.next;
+            	i++;
             }
-            System.out.println("]");
+            System.out.print(temp.data);
+            System.out.print("]");
         }
     }
     
     
-    Node head, tail = null;
-     void add(int data){
+    
+    
+    public void add(int data){
         Node newNode = new Node(data);
         if(head == null){
             head = tail = newNode;
@@ -64,6 +79,11 @@ public class DoubleLinkedList implements ILinkedList {
             tail = newNode;
             tail.next = null;
         }
+        size++;
+    }
+    
+    public int size() {
+    	return size;
     }
     
     public static void main(String[] args) {
@@ -73,9 +93,9 @@ public class DoubleLinkedList implements ILinkedList {
         String sin = sc.nextLine().replaceAll("\\[|\\]", "");
         String[] s = sin.split(", ");
         
-        DoubleLinkedList ddl = new DoubleLinkedList();
+        test ddl = new test();
         if(s.length==1 & s[0].isEmpty()){
-            ddl = new DoubleLinkedList();
+            ddl = new test();
         }
         else{
             for(int k=0; k<s.length; k++)
@@ -92,7 +112,7 @@ public class DoubleLinkedList implements ILinkedList {
             break;
             
             case "addToIndex":
-                int element, index;
+                
                 
                 
         }

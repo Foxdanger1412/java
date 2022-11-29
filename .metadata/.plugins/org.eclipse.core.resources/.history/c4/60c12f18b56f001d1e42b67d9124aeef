@@ -1,3 +1,9 @@
+package test;
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
 import java.io.*;
 import java.util.*;
 import java.text.*;
@@ -20,7 +26,7 @@ public boolean contains(Object o);
 }
 
 
-public class DoubleLinkedList implements ILinkedList {
+public class test implements ILinkedList {
 	/* Implement your linked list class here*/
     
     class Node{
@@ -33,7 +39,7 @@ public class DoubleLinkedList implements ILinkedList {
         }
     }
     
-     void printDLL(DoubleLinkedList myList){
+    public void printDLL(test myList){
         Node temp = head;
         if(head == null){
             System.out.println("[]");
@@ -73,9 +79,9 @@ public class DoubleLinkedList implements ILinkedList {
         String sin = sc.nextLine().replaceAll("\\[|\\]", "");
         String[] s = sin.split(", ");
         
-        DoubleLinkedList ddl = new DoubleLinkedList();
+        test ddl = new test();
         if(s.length==1 & s[0].isEmpty()){
-            ddl = new DoubleLinkedList();
+            ddl = new test();
         }
         else{
             for(int k=0; k<s.length; k++)
